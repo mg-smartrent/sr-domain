@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.mg.platform</groupId>
+        <artifactId>sr-parent</artifactId>
+        <version>1.27</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <artifactId>sr-domain</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <scm>
+        <url>https://github.com/mg-smartrent/sr-domain</url>
+        <connection>scm:git:https://github.com/mg-smartrent/sr-domain.git</connection>
+        <developerConnection>scm:git:https://github.com/mg-smartrent/sr-domain.git
+        </developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <dependencies>
+        <!--  Testing { -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator-annotation-processor</artifactId>
+            <version>4.1.0.Final</version>
+            <scope>test</scope>
+        </dependency>
+        <!--  Testing } -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--Code quality {-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                    <logViolationsToConsole>true</logViolationsToConsole>
+                    <configLocation>build/check-style/checkstyle-checker.xml</configLocation>
+                </configuration>
+            </plugin>
+            <!--Code quality }-->
+        </plugins>
+    </build>
+
+</project>
